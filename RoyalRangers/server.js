@@ -1,66 +1,57 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var mongojs = require("mongojs");
-//var ObjectID = mongodb.ObjectID;
-var URL = require('url');
-var router = express.Router();
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongodb = require("mongodb");
+var ObjectID = mongodb.ObjectID;
 
-var uri = "mongodb://alivarsdottir:alexalif1310@ds155132.mlab.com:55132/royalrangersdb";
-var db = mongojs(uri, ['Users']);
+const url = require('url');
+
+var CONTACTS_COLLECTION = "Users";
+
+var MONGODB_URI = 'mongodb://admin:pass@ds155132.mlab.com:55132/royalrangersdb';
 
 var app = express();
 app.use(bodyParser.json());
 
+// Create a database variable outside of the database connection callback to reuse the connection pool in your app.
+var db;
 
-/*mongodb.connect(process.env.uri, function(err, database) {
-    if (err) {
-        console.log(err);
-        process.exit(1);
-    }*/
+// Connect to the database before starting the application server.
+mongodb.MongoClient.connect(MONGODB_URI, function (err, database) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
 
-console.log("Database connection ready");
+  // Save database object from the callback for reuse.
+  db = database;
+  console.log("Database connection ready");
 
-app.set('port', process.env.PORT || 8080)
-
-var server = app.listen(app.get('port'), function() {
-    var host = server.address().address
-    var port = server.address().port
-
+  // Initialize the app.
+  var server = app.listen(process.env.PORT || 8080, function () {
+    var port = server.address().port;
     console.log("App now running on port", port);
-
+  });
 });
 
+// CONTACTS API ROUTES BELOW
 
+// Generic error handler used by all endpoints.
+function handleError(res, reason, message, code) {
+  console.log("ERROR: " + reason);
+  res.status(code || 500).json({"error": message});
+}
 
-/*function handleError(res, reason, message, code) {
-    console.log("ERROR: " + reason);
-    res.status(code || 500).json({
-        "error": message
-    });
-}*/
+/*  "/api/contacts"
+ *    GET: finds all contacts
+ *    POST: creates a new contact
+ */
 
-
-router.get('/', function(req, res, next) {
-    console.log("hellow world");
+app.get("/api/users", function(req, res) {
+  db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get contacts.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
 });
-
-
-
-router.route('/users').get(function(req, res) {
-    db.users.find(function(err, docs) {
-        if (err) {
-            res.send(err)
-        }
-        res.json(docs);
-    });
-});
-
-/*app.get('/api/users', function(req, res) {
-    db.collection("Users").find({}).toArray(function(err, docs) {
-        if (err) {
-            handleError(res, err.message, "Failed to get contacts.");
-        } else {
-            res.status(200).json(docs);
-        }
-    });
-});*/
