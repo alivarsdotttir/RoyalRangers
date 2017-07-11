@@ -1,11 +1,13 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
+var dateFormat = require('x-date');
 var ObjectID = mongodb.ObjectID;
 
 const url = require('url');
 
 var CONTACTS_COLLECTION = "Users";
+var POSTS_COLLECTION = "Posts";
 
 var MONGODB_URI = 'mongodb://admin:pass@ds155132.mlab.com:55132/royalrangersdb';
 
@@ -16,7 +18,7 @@ app.use(bodyParser.json());
 var db;
 
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(MONGODB_URI, function (err, database) {
+mongodb.MongoClient.connect(MONGODB_URI, function(err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
@@ -27,7 +29,7 @@ mongodb.MongoClient.connect(MONGODB_URI, function (err, database) {
   console.log("Database connection ready");
 
   // Initialize the app.
-  var server = app.listen(process.env.PORT || 8080, function () {
+  var server = app.listen(process.env.PORT || 8080, function() {
     var port = server.address().port;
     console.log("App now running on port", port);
   });
@@ -38,7 +40,9 @@ mongodb.MongoClient.connect(MONGODB_URI, function (err, database) {
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
   console.log("ERROR: " + reason);
-  res.status(code || 500).json({"error": message});
+  res.status(code || 500).json({
+    "error": message
+  });
 }
 
 /*  "/api/contacts"
@@ -46,10 +50,50 @@ function handleError(res, reason, message, code) {
  *    POST: creates a new contact
  */
 
+//gets list of all users
 app.get("/api/users", function(req, res) {
   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+});
+
+
+//creates a new post
+app.post("/api/posts", function(req, res) {
+  //var newPost = req.body;
+
+  if (!req.body.title || !req.body.content) {
+    handleError(res, err.message, "Title and content of post are required.");
+  }
+
+  var newPost = {
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+    date: new Date().format('dd-mm-yyyy')
+  };
+
+  console.log(newPost);
+
+  db.collection(POSTS_COLLECTION).insertOne(newPost, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to create post.");
+    } else {
+      res.status(201).json(doc.ops[0]);
+    }
+  });
+});
+
+
+//gets all created posts
+app.get("/api/posts", function(req, res) {
+  db.collection(POSTS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get posts.");
     } else {
       res.status(200).json(docs);
     }
