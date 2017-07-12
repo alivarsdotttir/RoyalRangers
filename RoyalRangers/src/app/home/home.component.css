@@ -4,10 +4,15 @@ body {
   line-height: 100vh;
 }
 
-.svg {
-  width: 300px;
-  -webkit-animation: move;
+
+#logo{
+  height: 60px;
+width: 60px
 }
+/*#Layer_1{
+  width: 100%;
+  height: 100%;
+}*/
 
 .st1 {
   position: absolute;
@@ -16,7 +21,7 @@ body {
   width: 120px;
   height: 120px;
   margin: -60px 0 0 -60px;
-  -webkit-animation: spin 10s infinite linear;
+  -webkit-animation: spin 4s /*infinite linear*/;
   transform-origin: 50% 50%;
 }
 
@@ -24,4 +29,17 @@ body {
   100% {
     -webkit-transform: rotate(360deg);
   }
+}
+
+#toolbar{
+  color: white;
+  background-color: #08542f;
+}
+
+.item-4{
+  background-color: blue;
+}
+
+.item-5{
+  background-color: red;
 }

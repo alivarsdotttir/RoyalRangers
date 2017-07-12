@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HomeService } from './home.service';
 import { HttpModule } from '@angular/http';
-import {MdCardModule, MdToolbarModule} from '@angular/material';
+import {MdCardModule, MdToolbarModule, MdIconModule} from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
@@ -19,6 +19,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MdCardModule,
     MdToolbarModule,
     FlexLayoutModule,
+    MdIconModule,
     RouterModule.forRoot([{
       path: '',
       component: HomeComponent,
