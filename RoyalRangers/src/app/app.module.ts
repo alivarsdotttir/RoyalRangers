@@ -5,13 +5,16 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HomeService } from './home.service';
 import { HttpModule } from '@angular/http';
-import {MdCardModule, MdToolbarModule, MdIconModule} from '@angular/material';
+import {MdToolbarModule, MdIconModule} from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { MdCardModule} from "@angular2-material/card";
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +23,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MdToolbarModule,
     FlexLayoutModule,
     MdIconModule,
+    MdCardModule,
     RouterModule.forRoot([{
       path: '',
       component: HomeComponent,
