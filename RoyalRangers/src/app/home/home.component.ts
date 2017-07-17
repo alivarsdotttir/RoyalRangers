@@ -9,6 +9,8 @@ import { HomeService } from '../home.service';
 export class HomeComponent implements OnInit {
 
   constructor(private homeService: HomeService) { }
+  Posts : boolean = true;
+  Images : boolean = false;
 
   ngOnInit() {
     this.getUsers();
@@ -18,6 +20,17 @@ export class HomeComponent implements OnInit {
     this.homeService.getUsers().subscribe(data => {
       console.log(data);
     });
+  }
+
+  changeDisplay(x : string){
+    if(x === "Posts"){
+      this.Posts = true;
+      this.Images = false;
+    }
+    else if(x === "Images"){
+      this.Posts = false;
+      this.Images = true;
+    }
   }
 
 }
