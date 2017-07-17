@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private homeService: HomeService) { }
   Posts : boolean = true;
   Images : boolean = false;
+  Notifications : boolean = false;
 
   ngOnInit() {
     this.getUsers();
@@ -26,10 +27,17 @@ export class HomeComponent implements OnInit {
     if(x === "Posts"){
       this.Posts = true;
       this.Images = false;
+      this.Notifications = false;
     }
     else if(x === "Images"){
       this.Posts = false;
       this.Images = true;
+      this.Notifications = false;;
+    }
+    else if(x === "Notifications"){
+      this.Posts = false;
+      this.Images = false;
+      this.Notifications = true;
     }
   }
 
