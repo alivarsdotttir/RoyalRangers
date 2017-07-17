@@ -5,8 +5,8 @@
   </div>
 <div class="row">
   <div class="col col-md-8">
-    <div id="posts">
-    <div class="card" id="cardStyle">
+   <div id="posts" *ngIf="Posts">
+    <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
       <img class="card-img-top" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image cap" id="cardImage">
       <div class="card-block">
         <h4 class="card-title">Skáta hátið!</h4>
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="card" id="cardStyle">
+    <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
       <img class="card-img-top" src="//placehold.it/300x200/ee" alt="Card image cap" id="cardImage">
       <div class="card-block">
         <h4 class="card-title">Allir að skrá sig í Royal Rangers!</h4>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="card" id="cardStyle">
+    <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
       <img class="card-img-top" src="//placehold.it/300x200/ee" alt="Card image cap" id="cardImage">
       <div class="card-block">
         <h4 class="card-title">Nú er komið að því...</h4>
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="card" id="cardStyle">
+    <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
       <img class="card-img-top" src="//placehold.it/300x200/ee" alt="Card image cap" id="cardImage">
       <div class="card-block">
         <h4 class="card-title">Haustið 2017</h4>
@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div class="card" id="cardStyle">
+    <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
       <div class="card-block">
         <h4 class="card-title">Minnum á skráningu</h4>
         <p class="card-text" id="cardText">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -60,18 +60,46 @@
       </div>
     </div>
 
-    <button type="button" class="btn btn-secondary btn-lg btn-block" style="width:80%; display: inline-block; margin: 0 0 1em;">Load More</button>
+    <button type="button" class="btn btn-secondary btn-lg btn-block" style="width:80%; display: inline-block; margin: 0 0 1em;">Hlaða meira...</button>
+</div>
+
+<div id="Images" *ngIf="Images">
+  <div id="images2">
+
+    <div class="card" id="imageCards">
+      <img class="card-img" id="cardImage" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image">
+    </div>
+
+    <div class="card" id="imageCards">
+      <img class="card-img" id="cardImage" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image">
+    </div>
+
+    <div class="card" id="imageCards">
+      <img class="card-img" id="cardImage" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image">
+    </div>
+
+    <div class="card" id="imageCards">
+      <img class="card-img" id="cardImage" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image">
+    </div>
+
+    <div class="card" id="imageCards">
+      <img class="card-img" id="cardImage" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image">
+    </div>
+
+    <div class="card" id="imageCards">
+      <img class="card-img" id="cardImage" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image">
+    </div>
+  </div>
 </div>
 </div>
 <div class="col col-md-4" id="miniMenu">
 <div class="sidebarModule">
   <div class="list-group">
-  <a href="#" class="list-group-item active">
+  <button (click)="changeDisplay('Posts')" class="list-group-item active" id="PostsButton">
     <i class="fa fa-calendar-check-o fa-fw" aria-hidden="true"></i>&nbsp; Viðburðir
-  </a>
-  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp; Tilkynningar</a>
-  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp; Myndir</a>
-  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i>&nbsp; Dagatal</a>
+  </button>
+  <button (click)="changeDisplay('Notifications')" class="list-group-item list-group-item-action" id="NotificationsButton"><i class="fa fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp; Tilkynningar</button>
+  <button (click)="changeDisplay('Images')" class="list-group-item list-group-item-action" id="ImagesButton"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp; Myndir</button>
 </div>
 </div>
 </div>
