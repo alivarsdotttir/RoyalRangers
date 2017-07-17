@@ -24,6 +24,7 @@
     "@angular/platform-browser": "^2.4.0",
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
+    "@angular2-material/card": "^2.0.0-alpha.8-3",
     "core-js": "^2.4.1",
     "mongojs": "^2.4.0",
     "rxjs": "^5.1.0",
