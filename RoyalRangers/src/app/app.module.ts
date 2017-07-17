@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 import { HomeService } from './home.service';
 import { HttpModule } from '@angular/http';
 import {MdToolbarModule, MdIconModule} from '@angular/material';
@@ -14,7 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,13 @@ import { NavbarComponent } from './navbar/navbar.component';
       component: HomeComponent,
       pathMatch: 'full'
 
-    }])
+    },
+    {
+      path: 'about',
+      component: AboutComponent,
+      pathMatch: 'full'
+    }
+  ])
   ],
   providers: [HomeService],
   bootstrap: [AppComponent]
