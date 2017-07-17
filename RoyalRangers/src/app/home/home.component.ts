@@ -9,9 +9,15 @@ import { HomeService } from '../home.service';
 export class HomeComponent implements OnInit {
 
   constructor(private homeService: HomeService) { }
+<<<<<<< HEAD
   Posts: boolean = true;
   Images: boolean = false;
   Notifications: boolean = false;
+=======
+  Posts : boolean = true;
+  Images : boolean = false;
+  Notifications : boolean = false;
+>>>>>>> 08769218904012d9dffbcfda688e399f773836cc
 
   ngOnInit() {
     this.getUsers();
@@ -27,10 +33,17 @@ export class HomeComponent implements OnInit {
     if (x === "Posts") {
       this.Posts = true;
       this.Images = false;
+      this.Notifications = false;
     }
     else if (x === "Images") {
       this.Posts = false;
       this.Images = true;
+      this.Notifications = false;;
+    }
+    else if(x === "Notifications"){
+      this.Posts = false;
+      this.Images = false;
+      this.Notifications = true;
     }
   }
 
