@@ -98,11 +98,15 @@
     <div class="col col-md-4" id="miniMenu">
       <div class="sidebarModule">
         <div class="list-group">
-          <button (click)="changeDisplay('Posts')" class="list-group-item active" id="PostsButton">
-    <i class="fa fa-calendar-check-o fa-fw" aria-hidden="true"></i>&nbsp; Viðburðir
-  </button>
-          <button (click)="changeDisplay('Notifications')" class="list-group-item list-group-item-action" id="NotificationsButton"><i class="fa fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp; Tilkynningar</button>
-          <button (click)="changeDisplay('Images')" class="list-group-item list-group-item-action" id="ImagesButton"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp; Myndir</button>
+          <button (click)="changeDisplay('Posts')" class="list-group-item display-button" id="PostsButton" [ngClass]="{'active':Posts === true}">
+              <i class="fa fa-calendar-check-o fa-fw" aria-hidden="true"></i>&nbsp; Viðburðir
+          </button>
+          <button (click)="changeDisplay('Notifications')" class="list-group-item list-group-item-action display-button" id="NotificationsButton" [ngClass]="{'active':Notifications == true}">
+              <i class="fa fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp; Tilkynningar
+          </button>
+          <button (click)="changeDisplay('Images')" class="list-group-item list-group-item-action display-button" id="ImagesButton" [ngClass]="{'active':Images === true}">
+              <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>&nbsp; Myndir
+          </button>
         </div>
       </div>
     </div>
