@@ -10,13 +10,15 @@ import {MdToolbarModule, MdIconModule} from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MdCardModule} from "@angular2-material/card";
 import { NavbarComponent } from './navbar/navbar.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     {
       path: 'about',
       component: AboutComponent,
+      pathMatch: 'full'
+    },
+    {
+      path: 'contact',
+      component: ContactComponent,
       pathMatch: 'full'
     }
   ])
