@@ -1,12 +1,13 @@
 <div class="container">
   <div class="jumbotron" id="banner-img">
     <h1>Royal Rangers</h1>
-    <p>Velkomin/n á nýju síðu Royal Rangers...</p>
+    <p style="color:gray;">Velkomin/n á nýju síðu Royal Rangers...</p>
     <!--<img class="forest-img" src="../assets/images/forest_transparent.png" />-->
   </div>
   <div class="row">
     <div class="col col-md-8">
       <div id="posts" *ngIf="Posts">
+        <a class="nav-link" routerLink="/postdetail/1" routerLinkActive="active">
         <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
           <img class="card-img-top" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image cap" id="cardImage">
           <div class="card-block">
@@ -18,7 +19,7 @@
             2017
           </div>
         </div>
-
+      </a>
         <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
           <img class="card-img-top" src="//placehold.it/300x200/ee" alt="Card image cap" id="cardImage">
           <div class="card-block">
@@ -66,7 +67,7 @@
       </div>
 
       <div id="posts" *ngIf="Notifications">
-        
+
         <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
           <div class="card-block">
             <h4 class="card-title">Minnum á skráningu</h4>

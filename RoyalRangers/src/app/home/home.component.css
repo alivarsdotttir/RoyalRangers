@@ -13,6 +13,9 @@
   margin: 0 0 1em;
   width: 80%;
 }
+#cardStyle:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 
 #cardText {
   font-size: 75%;
@@ -66,4 +69,9 @@
 
 .display-button:focus {
   outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

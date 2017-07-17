@@ -11,6 +11,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MdCardModule} from "@angular2-material/card";
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     NavbarComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,11 @@ import { ContactComponent } from './contact/contact.component';
     {
       path: 'contact',
       component: ContactComponent,
+      pathMatch: 'full'
+    },
+    {
+      path: 'postdetail/:id',
+      component: PostDetailComponent,
       pathMatch: 'full'
     }
   ])
