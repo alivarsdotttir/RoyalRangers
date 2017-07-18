@@ -14,7 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { ImagesComponent } from './images/images.component';
 import { ImageModal } from './images/angular2-image-popup/image-modal-popup';
-
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { ImageModal } from './images/angular2-image-popup/image-modal-popup';
     ContactComponent,
     PostDetailComponent,
     ImagesComponent,
-    ImageModal
+    ImageModal,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +55,11 @@ import { ImageModal } from './images/angular2-image-popup/image-modal-popup';
       {
         path: 'postdetail/:id',
         component: PostDetailComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
         pathMatch: 'full'
       }
     ])
