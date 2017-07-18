@@ -46,7 +46,6 @@
 
 #imageCards {
   display: inline-block;
-  ;
   column-break-inside: avoid;
 }
 

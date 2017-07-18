@@ -12,6 +12,7 @@ import { MdCardModule} from "@angular2-material/card";
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     NavbarComponent,
     AboutComponent,
     ContactComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,11 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     {
       path: 'postdetail/:id',
       component: PostDetailComponent,
+      pathMatch: 'full'
+    },
+    {
+      path: 'login',
+      component: LoginComponent,
       pathMatch: 'full'
     }
   ])
