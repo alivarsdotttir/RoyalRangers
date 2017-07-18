@@ -12,6 +12,9 @@ import { MdCardModule} from "@angular2-material/card";
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { ImagesComponent } from './images/images.component';
+import { ImageModal } from './images/angular2-image-popup/image-modal-popup';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     NavbarComponent,
     AboutComponent,
     ContactComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    ImagesComponent,
+    ImageModal
   ],
   imports: [
     BrowserModule,
@@ -36,22 +41,22 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
       pathMatch: 'full'
 
     },
-    {
-      path: 'about',
-      component: AboutComponent,
-      pathMatch: 'full'
-    },
-    {
-      path: 'contact',
-      component: ContactComponent,
-      pathMatch: 'full'
-    },
-    {
-      path: 'postdetail/:id',
-      component: PostDetailComponent,
-      pathMatch: 'full'
-    }
-  ])
+      {
+        path: 'about',
+        component: AboutComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'postdetail/:id',
+        component: PostDetailComponent,
+        pathMatch: 'full'
+      }
+    ])
   ],
   providers: [HomeService],
   bootstrap: [AppComponent]

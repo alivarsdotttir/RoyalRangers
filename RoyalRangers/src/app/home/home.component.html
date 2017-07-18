@@ -8,18 +8,18 @@
     <div class="col col-md-8">
       <div id="posts" *ngIf="Posts">
         <a class="nav-link" routerLink="/postdetail/1" routerLinkActive="active">
-        <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
-          <img class="card-img-top" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image cap" id="cardImage">
-          <div class="card-block">
-            <h4 class="card-title">Skáta hátið!</h4>
-            <p class="card-text" id="cardText">Some quick example text to build on the card title and make up the bulk of the card's content..Some quick example text to build on the card title and make up the bulk of the card's content..Some quick example text to build on the card title
-              and make up the bulk of the card's content..</p>
+          <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
+            <img class="card-img-top" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image cap" id="cardImage">
+            <div class="card-block">
+              <h4 class="card-title">Skáta hátið!</h4>
+              <p class="card-text" id="cardText">Some quick example text to build on the card title and make up the bulk of the card's content..Some quick example text to build on the card title and make up the bulk of the card's content..Some quick example text to build on the card title
+                and make up the bulk of the card's content..</p>
+            </div>
+            <div class="card-footer">
+              2017
+            </div>
           </div>
-          <div class="card-footer">
-            2017
-          </div>
-        </div>
-      </a>
+        </a>
         <div class="card" id="cardStyle" data-aos="fade-in" data-aos-duration="1000">
           <img class="card-img-top" src="//placehold.it/300x200/ee" alt="Card image cap" id="cardImage">
           <div class="card-block">
@@ -82,7 +82,9 @@
       </div>
 
       <div id="Images" *ngIf="Images">
-        <div id="images2">
+
+        <app-images></app-images>
+        <!--<div id="images2">
 
           <div class="card" id="imageCards">
             <img class="card-img" id="cardImage" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image">
@@ -107,7 +109,7 @@
           <div class="card" id="imageCards">
             <img class="card-img" id="cardImage" src="https://s4.postimg.org/gozhmenvx/image-alignment-300x200.jpg" alt="Card image">
           </div>
-        </div>
+      </div>-->
       </div>
 
     </div>
