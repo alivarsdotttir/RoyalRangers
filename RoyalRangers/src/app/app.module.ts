@@ -15,6 +15,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { ImagesComponent } from './images/images.component';
 import { ImageModal } from './images/angular2-image-popup/image-modal-popup';
 import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     PostDetailComponent,
     ImagesComponent,
     ImageModal,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

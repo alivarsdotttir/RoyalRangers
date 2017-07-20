@@ -9,7 +9,7 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
     Login : boolean = true;
-    showNav : boolean = true;
+    showNav : boolean = false;
 
   ngOnInit() {
   }
