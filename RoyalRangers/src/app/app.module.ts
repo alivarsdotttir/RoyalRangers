@@ -16,6 +16,8 @@ import { ImagesComponent } from './images/images.component';
 import { ImageModal } from './images/angular2-image-popup/image-modal-popup';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
+import {CommonModule} from '@angular/common';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     ImagesComponent,
     ImageModal,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { FooterComponent } from './footer/footer.component';
     FlexLayoutModule,
     MdIconModule,
     MdCardModule,
+    CommonModule,
     RouterModule.forRoot([{
       path: '',
       component: HomeComponent,
@@ -62,6 +66,11 @@ import { FooterComponent } from './footer/footer.component';
       {
         path: 'login',
         component: LoginComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'events',
+        component: EventsComponent,
         pathMatch: 'full'
       }
     ])

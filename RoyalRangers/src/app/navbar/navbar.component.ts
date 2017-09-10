@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  showNav : boolean = false;
 
+
+export class NavbarComponent implements OnInit {
+
+  @Input() showNav: boolean = false;
   constructor() { }
 
   ngOnInit() {

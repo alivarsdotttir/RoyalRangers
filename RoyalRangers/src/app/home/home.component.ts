@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   Posts: boolean = true;
   Images: boolean = false;
   Notifications: boolean = false;
-
+  showNav = true;
   ngOnInit() {
     this.getUsers();
   }
