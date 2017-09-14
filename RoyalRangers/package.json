@@ -27,6 +27,7 @@
     "@angular/tsc-wrapped": "^4.3.0",
     "@angular2-material/card": "^2.0.0-alpha.8-3",
     "@angular2-material/core": "^2.0.0-alpha.8-3",
+    "@types/cropperjs": "0.0.26",
     "angular2-image-popup": "^1.1.2",
     "core-js": "^2.4.1",
     "mongojs": "^2.4.0",

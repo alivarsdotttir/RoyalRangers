@@ -10,7 +10,7 @@ import {CommonModule} from '@angular/common';
 
 export class NavbarComponent implements OnInit {
 
-  @Input() showNav: boolean = false;
+  @Input() showNav: boolean = true;
   constructor() { }
 
   ngOnInit() {
