@@ -18,6 +18,10 @@ import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import {CommonModule} from '@angular/common';
 import { EventsComponent } from './events/events.component';
+import { InnerWebComponent } from './inner-web/inner-web.component';
+import { AnnouncementsComponent } from './announcements/announcements.component';
+import { AbouteditComponent } from './aboutedit/aboutedit.component';
+import { ContactinformationeditComponent } from './contactinformationedit/contactinformationedit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { EventsComponent } from './events/events.component';
     ImageModal,
     LoginComponent,
     FooterComponent,
-    EventsComponent
+    EventsComponent,
+    InnerWebComponent,
+    AnnouncementsComponent,
+    AbouteditComponent,
+    ContactinformationeditComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +80,28 @@ import { EventsComponent } from './events/events.component';
         path: 'events',
         component: EventsComponent,
         pathMatch: 'full'
+      },
+      {
+        path: 'innerweb',
+        component: InnerWebComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'announcements',
+        component: AnnouncementsComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'aboutedit',
+        component: AbouteditComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'contactinformationedit',
+        component: ContactinformationeditComponent,
+        pathMatch: 'full'
       }
+
     ])
   ],
   providers: [HomeService],

@@ -18,19 +18,6 @@ export class EventsComponent implements OnInit {
   constructor(private element: ElementRef) { }
 
   ngOnInit() {
-
-  /*  Cropper = new Cropper(this.photo.nativeElement, {
-               aspectRatio: 3 / 2,
-               dragMode: 'move',
-               background: false,
-               ready: function () {
-              // Do something here
-              // ...
-
-              // And then
-              this.cropper.clear();
-            }
-        });*/
   }
 
   ngAfterViewInit() {
@@ -50,7 +37,7 @@ export class EventsComponent implements OnInit {
     this.step = "step1";
 
     if (fileInput.target.files && fileInput.target.files[0]) {
-    const reader = new FileReader();
+    var reader = new FileReader();
     var image = this.element.nativeElement.querySelector('#cardImage');
     reader.onload = ((e) => {
       this.input = false;
